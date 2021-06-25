@@ -1,6 +1,6 @@
 # 15 Project 2: Gift List
 
-[![License: MIT](https://img.shields.io/github/license/CailinBellWold/Project_2_Gift_List?style=plastic)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/github/license/CailinBellWold/Project-2-Gift-List?style=plastic)](https://opensource.org/licenses/MIT)
 
 ## Description 
 
