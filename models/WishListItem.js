@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class WishListItem extends Model {}
+class Gifts extends Model {}
 
-WishListItem.init(
+Gifts.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,7 +15,7 @@ WishListItem.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    already_purchased: {
+    purchased: {
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
@@ -26,13 +26,21 @@ WishListItem.init(
         key: 'id',
       },
     },
+    // Part of Stretch Goal
+    // item_price: {
+    //   type: DataTypes.DECIMAL (10,2),
+    //   allowNull: false,
+    //   validate: {
+    //     isDecimal: true
+    //   }
+    // },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'WishListItem',
+    modelName: 'Gifts',
   }
 );
 
-module.exports = WishListItem;
+module.exports = Gifts;
