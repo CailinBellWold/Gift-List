@@ -1,13 +1,13 @@
 const Recipient = require('./Recipient');
 const User = require('./User');
-const WishListItem = require('./WishListItem');
+const Gifts = require('./Gifts');
 
-Recipient.hasMany(WishListItem, {
+Recipient.hasMany(Gifts, {
   foreignKey: 'recipient_id',
 });
 
-WishListItem.belongsTo(Recipient, {
+Gifts.belongsTo(Recipient, {
   foreignKey: 'recipient_id',
 });
 
-module.exports = { User, Recipient, WishListItem };
+module.exports = { User, Recipient, Gifts };
