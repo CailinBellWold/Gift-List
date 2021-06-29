@@ -22,9 +22,18 @@
     <header>
         <nav class='navbar navbar-expand-lg navbar-light fixed-top px-3 giftlist-navbar'>
             <img src="../../public/images/gift-list-logo.png" alt="Gift List logo">
+            <!-- <h1>Gift List</h1> -->
+        <!-- <a class='navbar-brand' href='#'>Gift List</a> -->
+        <!-- <button class='navbar-toggler' type='button' data-toggle='collapse' data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class='navbar-toggler-icon'></span>
+        </button> -->
+        <!-- <div class='collapse navbar-collapse' id='navbarToggler'>
+            
+        </div> -->
             <ul class='navbar-nav d-flex flex-row w-100 offset-md-7'>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
+                <!-- <a href='/userlanding'>User Landing</a> -->
                 <li class='nav-item'><a class='nav-link btn btn-secondary' href='/userlanding' target='_blank' rel='noreferrer noopener'>Logout</a></li>
                 {{else}}
                 <li class='nav-item'><a class='nav-link btn btn-secondary' href='/login' target='_blank' rel='noreferrer noopener'>Login</a></li>
@@ -36,6 +45,28 @@
 
     <main>
         <div class='container'>
+            <!--BODY/Homepage Handlebars-->
+            <section id='about'>
+                <div class='row'>
+                    <div class='col-md-5 gx-4 mb-4'>
+                        <h3><strong>Welcome to Gift List!</strong></h4>
+                        <p class='text-muted'>Even trees need a friend. We all need friends. Just think about these things in your mind and drop em' on canvas. Let your imagination be your guide. This is probably the greatest thing that's ever happened in my life. Let your heart be your guide. Let's give him a friend too. Everybody needs a friend.</p>
+
+                        <p><strong>Description</strong></p>
+                        <p class='text-muted'>
+                            Even trees need a friend. We all need friends. Just think about these things in your mind and drop em' on canvas. Let your imagination be your guide. This is probably the greatest thing that's ever happened in my life. Let your heart be your guide. Let's give him a friend too. Everybody needs a friend.</p>
+                    </div>
+
+                    <div class='col-md-7 gx-5'>
+                    <figure class='figure-image'>
+                    <img src='../../public/images/debby-hudson-VO7p_CgTylQ-unsplash.jpg' alt='Photo by Debby Hudson on Unsplash' class='img-fluid rounded mb-3'/>
+                    <a href='#!'></a>
+                    </figure>
+                    </div>
+
+                </div>
+            </section>
+            <!--END BODY/Homepage Handlebars-->
             <!-- Render the sub layout -->
             {{{ body }}}
         </div>
