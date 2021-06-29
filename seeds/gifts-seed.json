@@ -1,0 +1,32 @@
+[
+  {
+    "description": "Unicorn stuffed animal from Amazon.com.",
+    "purchased": false,
+    "recipient_id": 1
+  },
+  {
+    "description": "Nerf gun from Target.",
+    "purchased": false,
+    "recipient_id": 2
+  },
+  {
+    "description": "Dress from J.Crew.",
+    "purchased": false,
+    "recipient_id": 3
+  },
+  {
+    "description": "Winnie the Pooh at Disney Store.",
+    "purchased": false,
+    "recipient_id": 1
+  },
+  {
+    "description": "Xbox One from Microsoft Store.",
+    "purchased": false,
+    "recipient_id": 2
+  },
+  {
+    "description": "Blouse from Gap.",
+    "purchased": false,
+    "recipient_id": 3
+  }
+]

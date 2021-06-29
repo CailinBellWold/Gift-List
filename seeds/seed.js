@@ -1,17 +1,22 @@
-
 const sequelize = require('../config/connection');
-const { User, Gift } = require('../models');
+const { User, Gifts, Recipient } = require('../models');
 
-const userData = require('./userData.json');
-const giftData = require('./giftData.json');
+// TODO: Make sure these path names match what are supplied by others.
+const userData = require('./user.json');
+const giftData = require('./gifts-seed.json');
+const recipientData = require('./recipient.json')
 
-const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
-
-  const users = await User.bulkCreate(userData, {
+  // We had to pass individualHooks: true here because
+  // we need to use bcrypt each userData.password ...
+  await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
-  });  
+  });
+
+  // Assuming we don't need to do anything extra as we create each recipient ...
+  await Recipient.bulkCreate(recipientData);
+  await Gifts.bulkCreate(giftData);
+
   process.exit(0);
 };
 
