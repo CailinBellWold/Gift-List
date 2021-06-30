@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Gifts, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => { //goes to userlanding
+router.get('/', async (req, res) => { 
   try {
     const giftData = await Gift.findAll({
       include: [
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => { //goes to userlanding
     // Serialize data so the template can read it
     const gifts = giftData.map((gift) => gift.get({ plain: true }));
     
-    // Pass serialized data and session flag into template //move this code over to userlanding.handlebars?
+    // Pass serialized data and session flag into template 
     res.render('userlanding', { 
       gifts, 
       logged_in: req.session.logged_in 
