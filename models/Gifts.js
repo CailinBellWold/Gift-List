@@ -11,6 +11,10 @@ Gifts.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    recipientName: {
+      type: DataTypes.STRING,
+      allowNull: false, 
+    },
     description: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -19,10 +23,10 @@ Gifts.init(
       type: DataTypes.BOOLEAN,
       defaultValue: false,
     },
-    recipient_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'recipient',
+        model: 'user',
         key: 'id',
       },
     },
