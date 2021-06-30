@@ -1,13 +1,13 @@
 const router = require('express').Router();
-const { Gift, User } = require('../models');
+const { Gifts, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { //goes to userlanding
   try {
     const giftData = await Gift.findAll({
       include: [
         {
-          model: User,
+          model: Recipient,
           attributes: ['name'],
         },
       ],
@@ -15,16 +15,16 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const gifts = giftData.map((gift) => gift.get({ plain: true }));
-
-    // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      projects, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+    const recipients = recipientData.map((recipient) => recipient.get({ plain: true }));
+//     // Pass serialized data and session flag into template
+//     res.render('homepage', { )
+//       projects, 
+//       logged_in: req.session.logged_in 
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// }); //move this code over to userlanding.handlebars 
 
 router.get('/gifts/:id', async (req, res) => {
   try {
@@ -54,7 +54,7 @@ router.get('/profile', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: Project }],
+      include: [{ model: User }],
     });
 
     const user = userData.get({ plain: true });
@@ -77,5 +77,5 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+  
 module.exports = router;

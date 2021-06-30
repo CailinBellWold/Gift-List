@@ -1,15 +1,15 @@
 const router = require('express').Router();
-const { Gifts } = require('../../models');
+const { Recipient } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const newGift = await Gift.create({
+    const newRecipient = await Recipient.create({
       ...req.body,
       user_id: req.session.user_id,
     });
 
-    res.status(200).json(newGift);
+    res.status(200).json(newRecipient);
   } catch (err) {
     res.status(400).json(err);
   }
@@ -17,22 +17,23 @@ router.post('/', withAuth, async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const giftData = await Gift.destroy({
+    const recipientData = await Recipient.destroy({
       where: {
         id: req.params.id,
         user_id: req.session.user_id,
       },
     });
 
-    if (!giftData) {
-      res.status(404).json({ message: 'No item(s) found with this id!' });
+    if (!recipientData) {
+      res.status(404).json({ message: 'No recipient found with this id!' });
       return;
     }
 
-    res.status(200).json(giftData);
+    res.status(200).json(recipientData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 module.exports = router;
+

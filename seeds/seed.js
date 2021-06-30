@@ -8,7 +8,9 @@ const recipientData = require('./recipient.json')
 
   // We had to pass individualHooks: true here because
   // we need to use bcrypt each userData.password ...
-  await User.bulkCreate(userData, {
+  const seedDatabase = async () => {
+    await sequelize.sync({ force : true });
+    await User.bulkCreate(userData, {
     individualHooks: true,
     returning: true,
   });
@@ -18,6 +20,7 @@ const recipientData = require('./recipient.json')
   await Gifts.bulkCreate(giftData);
 
   process.exit(0);
+
 };
 
 seedDatabase();
