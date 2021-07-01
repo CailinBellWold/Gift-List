@@ -1,14 +1,14 @@
 const router = require('express').Router();
-const { Gifts, User } = require('../models');
+const { Gifts: Gift, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => { 
+router.get('/', async (req, res) => {
   try {
     const giftData = await Gift.findAll({
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['id'], // There's no 'name' attribute, correct?
         },
       ],
     });
@@ -21,10 +21,10 @@ router.get('/', async (req, res) => {
       gifts, 
       logged_in: req.session.logged_in 
     });
-    } catch (err) {
+  } catch (err) {
     res.status(500).json(err);
-    }
-    });
+  }
+});
 
 router.get('/gifts/:id', async (req, res) => {
   try {
