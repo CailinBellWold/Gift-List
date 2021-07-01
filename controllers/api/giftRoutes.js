@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { Gifts } = require('../../models');
+// If you want to refer to it as Gift instead of Gifts, this will do the trick ...
+const { Gifts: Gift } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
