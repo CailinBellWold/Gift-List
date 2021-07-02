@@ -1,24 +1,36 @@
+const addButtonHandler = async (event) => {
+  event.target.getAttribute('add-gift-btn').onclick = function () {
+    document.location.replace('/newGift');
+  }
+};
+
 const updateButtonHandler = async (event) => {
-    event.preventDefault();
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/gifts/${id}`, {
+      method: 'PUT',
+    });
 
     if (response.ok) {
-        document.location.replace('/profile');
-      } else {
-        alert('Failed to create project');
-      }
+      document.location.replace('/userlanding');
+    } else {
+      alert('Failed to update gift');
     }
-  };
-  
-  const delButtonHandler = async (event) => {
+  }
+};
+
+
+  const deleteButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/projects/${id}`, {
+      const response = await fetch(`/api/gifts/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/userlanding');
       } else {
         alert('Failed to delete project');
       }
@@ -26,10 +38,14 @@ const updateButtonHandler = async (event) => {
   };
   
   document
-    .querySelector('.new-project-form')
-    .addEventListener('submit', newFormHandler);
+    .querySelector('.add-gift-btn')
+    .addEventListener('add', addButtonHandler);
   
   document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
+    .querySelector('.gift-list')
+    .addEventListener('update', updateButtonHandler);
+
+  document
+    .querySelector('.gift-list')
+    .addEventListener('delete', deleteButtonHandler);
   
