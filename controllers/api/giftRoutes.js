@@ -15,7 +15,7 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-//TODO: Add a PUT route to update the users gift
+// PUT route to update the users gift
 router.put('/:id', async (req, res) => {
   // update a category by its `id` value
   try {
