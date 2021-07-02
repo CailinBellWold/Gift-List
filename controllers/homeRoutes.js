@@ -14,10 +14,10 @@ router.get('/', async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const gifts = giftData.map((gift) => gift.get({ plain: true }));
+    // const gifts = giftData.map((gift) => gift.get({ plain: true }));
     
     // Pass serialized data and session flag into template 
-    res.render('userlanding', { 
+    res.render('homepage', { 
       gifts, 
       logged_in: req.session.logged_in 
     });
@@ -31,8 +31,8 @@ router.get('/gifts/:id', async (req, res) => {
     const giftData = await Gift.findByPk(req.params.id, {
       include: [
         {
-          model: Gifts,
-          attributes: ['id'],
+          model: Gift,
+          attributes: ['email'],
         },
       ],
     });
@@ -53,8 +53,7 @@ router.get('/userlanding', withAuth, async (req, res) => {
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: User }], // Maybe take this line out??
+      // include: [{ model: Gift }],
     });
 
     const user = userData.get({ plain: true });
