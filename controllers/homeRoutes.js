@@ -75,9 +75,6 @@ router.get('/gifts/:id', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/userlanding', withAuth, async (req, res) => {
-  console.log('get /userlanding called');
-  console.log('req.params:\n', JSON.stringify(req.params, null, 2));
-  console.log('req.session:\n', JSON.stringify(req.session, null, 2));
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {

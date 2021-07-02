@@ -1,5 +1,4 @@
 const addButtonHandler = async (event) => {
-  console.log('addButtonHandler() called:\n', JSON.stringify(event.target, null, 2));
   document.location.replace('/newGift');
 };
 
@@ -35,8 +34,6 @@ const deleteButtonHandler = async (event) => {
     }
   }
 };
-
-console.log('Adding event handlers!');
 
 document
   .getElementById('btn-add-gift')
