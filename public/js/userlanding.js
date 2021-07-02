@@ -4,6 +4,7 @@ const addButtonHandler = async (event) => {
   }
 };
 
+//Still working on this. Need to pass ID to update page.
 const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -48,4 +49,3 @@ const updateButtonHandler = async (event) => {
   document
     .querySelector('.gift-list')
     .addEventListener('delete', deleteButtonHandler);
-  
