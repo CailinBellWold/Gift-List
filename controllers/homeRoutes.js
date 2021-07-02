@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gifts, User } = require('../models');
+const { Gifts: Gift, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => { 
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['name'],
+          attributes: ['id'],
         },
       ],
     });
@@ -31,8 +31,8 @@ router.get('/gifts/:id', async (req, res) => {
     const giftData = await Gift.findByPk(req.params.id, {
       include: [
         {
-          model: User,
-          attributes: ['name'],
+          model: Gifts,
+          attributes: ['id'],
         },
       ],
     });
@@ -54,7 +54,7 @@ router.get('/userlanding', withAuth, async (req, res) => {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
-      include: [{ model: User }],
+      include: [{ model: User }], // Maybe take this line out??
     });
 
     const user = userData.get({ plain: true });

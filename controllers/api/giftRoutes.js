@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Gifts } = require('../../models');
+const { Gifts: Gift } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
@@ -11,6 +11,22 @@ router.post('/', withAuth, async (req, res) => {
 
     res.status(200).json(newGift);
   } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+//TODO: Add a PUT route to update the users gift
+router.put('/:id', async (req, res) => {
+  // update a category by its `id` value
+  try {
+    const giftName = await Gift.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    res.status(200).json(giftName);
+  } catch (err) {
+    console.error(err);
     res.status(400).json(err);
   }
 });
