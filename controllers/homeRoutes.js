@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Gifts: Gift, User } = require('../models');
+const { update } = require('../models/User');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
@@ -35,10 +36,10 @@ router.get('/userlanding', withAuth, async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    // const gifts = giftData.map((gift) => gift.get({ plain: true }));
+    const gifts = giftData.map((gift) => gift.get({ plain: true }));
     
     // Pass serialized data and session flag into template 
-    res.render('homepage', { 
+    res.render('userlanding', { 
       gifts, 
       logged_in: req.session.logged_in 
     });
@@ -47,7 +48,7 @@ router.get('/userlanding', withAuth, async (req, res) => {
   }
 });
 
-router.get('/gifts/:id', async (req, res) => {
+router.get('/updateGift/:id', async (req, res) => {
   try {
     const giftData = await Gift.findByPk(req.params.id, {
       include: [
@@ -60,8 +61,8 @@ router.get('/gifts/:id', async (req, res) => {
 
     const gift = giftData.get({ plain: true });
 
-    res.render('gift', {
-      ...gift,
+    res.render('updateGift', {
+      gift,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -70,3 +71,4 @@ router.get('/gifts/:id', async (req, res) => {
 });
 
 module.exports = router;
+
