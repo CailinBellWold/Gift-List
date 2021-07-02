@@ -47,6 +47,12 @@ router.get('/userlanding', withAuth, async (req, res) => {
   }
 });
 
+// TODO: This shows /newGift, but you would think someone had to be authenticated
+router.get('/newGift', async (req, res) => {
+  console.log('GET /newGift route called:\n', JSON.stringify(req.session, null, 2));
+  res.render('newGift');
+});
+
 router.get('/gifts/:id', async (req, res) => {
   try {
     const giftData = await Gift.findByPk(req.params.id, {
