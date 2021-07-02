@@ -166,6 +166,46 @@ h3, h4, h5 {
 }
 
 /*MediaQuery for Mobile*/
+@media screen and (max-width: 1399px){
+    body {
+    margin: 0 2%;
+    }
+
+    .cmb-media-ul {
+        margin-left: 55rem;
+    }
+
+@media screen and (max-width: 1285px){
+    body {
+        margin: 0 2%;
+    }
+    
+    .cmb-media-ul {
+        margin-left: 40rem;
+    }
+
+@media screen and (max-width: 1044px){
+    .cmb-media-ul {
+        margin-left: 30rem;
+    }
+}
+    
+/* @media screen and (max-width: 991px){
+    /* main {
+        padding-top: 12rem;
+    } */
+
+    /* .giftlist-navbar {
+        padding-right: 0;
+    }
+    .cmb-media-ul {
+        padding-left: 0;
+    }
+} */ */
+    /* .giftlist-navbar {
+        margin: 0 5rem 0 5rem;
+    } */
+}
 /* @media screen and (max-width: 480px) {
     body {
         background-color: var(--c-ddblue);
