@@ -24,8 +24,8 @@
 
 1. (IN PROGRESS) When a user views the homepage, they can find a link to log in or create an account.
 2. (IN PROGRESS) When a user attempts to log in or sign up on the login page, they can log in or create a password-protected account.
-3. (IN PROGRESS) When a user views the landing page in a logged-in state, they see a list of gifts they have not yet purchased.
-4. (IN PROGRESS) When a user views the landing page in a logged-out state, they are redirected to the login page.
+3. (IN PROGRESS) When a user views the user's landing page in a logged-in state, they see a list of gifts they have not yet purchased.
+4. (IN PROGRESS) When a user views the user's landing page in a logged-out state, they are redirected to the login page.
 5. (IN PROGRESS) When a user clicks the 'add' button to add a new gift, they have the opportunity to enter information about the new gift, including giftee, description, notes, and budget, and to save the new gift.
 6. (IN PROGRESS) When a user clicks on a gift line from their user landing page to edit a gift, they are able to edit the giftee, description, notes, and budget for that gift line or to check off the gift as purchased, and to save the gift.
 7. (IN PROGRESS) When a user clicks on the save button after having edited or added information about a new gift, they are redirected to their user landing page, where the new or updated gift renders with its associated updates.

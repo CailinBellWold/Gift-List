@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Gift List">   
+    <meta name="description" content="Gift List">
     <meta name="keywords" content="Gift, Organize, Holiday, Holidays">
     <meta name="author" content="Cailin Bell Wold, Danny Roubin, Donna Crawford, and Tyler Hance">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?&family=Poppins:wght@200;300;400;500&family=Roboto:wght@300;400;500;700&display=swap" >
-    <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Gift List</title>
     <link rel="shortcut icon" type="image/png" href="../../public/images/favicon.png"/>
 </head>
@@ -45,8 +45,10 @@
 
     <main>
         <div class='container'>
+        <!-- Render the sub layout -->
+            {{{ body }}}
             <!--BODY/Homepage Handlebars-->
-            <section id='about'>
+            <!-- <section id='about'>
                 <div class='row'>
                     <div class='col-md-5 gx-4 mb-4'>
                         <h3><strong>Welcome to Gift List!</strong></h4>
@@ -65,10 +67,44 @@
                     </div>
 
                 </div>
-            </section>
+            </section> -->
             <!--END BODY/Homepage Handlebars-->
-            <!-- Render the sub layout -->
-            {{{ body }}}
+
+            <!--BODY/Userlanding Handelbars -->
+            <section id='add-gift-button'>
+                <button class='btn btn-warning' data-id='{{gift.id}}'>+ Add Gift</button>
+            </section>
+
+            <section id='gift-list'>
+                <div class='col-10'>
+                    <div class="card">
+                        <h3 class="card-header">Your Gift List</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Recipient</th>
+                                    <th scope='col'>Description</th>
+                                    <th scope='col'>Purchased</th>
+                                </tr>
+                            </thead>
+                    {{#if gifts.length}}
+                        {{#each gifts as |gift|}}
+                        <tbody>
+                            <tr><a href='/gift/{{gift.id}}'></a></tr>
+                                <td scope='row'>{{gift.recipientName}}</th>
+                                <td id='description'>{{gift.description}}</td>
+                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td class='btn-group'>
+                                    <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'>Update</button>
+                                    <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
+                                </td>
+                        {{/each}}
+                    {{/if}}
+                    </div>
+                </div>
+            </section>
+            <!--END BODY/Userlanding Handelbars -->
+
         </div>
     </main>
 

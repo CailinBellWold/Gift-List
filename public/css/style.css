@@ -109,6 +109,44 @@ h3, h4, h5 {
     transform: scale(1.04);
 }
 
+.btn-danger,
+.btn-danger:active,
+.btn-danger:visited {
+    color: var(--c-white) !important;
+    background-color: var(--c-tomato);
+    border: .1em solid var(--c-dtomato);
+    border-radius: 10px;
+    box-shadow: 8px 10px 10px var(--c-dneutral);
+    margin: .5em 1em 1em 0;
+    cursor: pointer;
+}
+
+.btn-danger:hover {
+    background-color: var(--c-ltomato);
+    border: .1em solid var(--c-tomato);
+    box-shadow: 8px 10px 10px var(--c-dneutral);
+    transform: scale(1.04);
+}
+
+.btn-warning,
+.btn-warning:active,
+.btn-warning:visited {
+    color: var(--c-white) !important;
+    background-color: var(--c-lcyan);
+    border: .1em solid var(--c-dcyan);
+    border-radius: 10px;
+    box-shadow: 8px 10px 10px var(--c-dneutral);
+    margin: .5em 1em 1em 0;
+    cursor: pointer;
+}
+
+.btn-warning:hover {
+    background-color: var(--c-dcyan);
+    border: .1em solid var(--c-ddcyan);
+    box-shadow: 8px 10px 10px var(--c-dneutral);
+    transform: scale(1.04);
+}
+
 .footer {
     position: fixed;
     left: 0;
