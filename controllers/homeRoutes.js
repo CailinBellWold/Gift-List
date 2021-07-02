@@ -35,10 +35,10 @@ router.get('/userlanding', withAuth, async (req, res) => {
     });
 
     // Serialize data so the template can read it
-    const gifts = giftData.map((gift) => gift.get({ plain: true }));
+    // const gifts = giftData.map((gift) => gift.get({ plain: true }));
     
     // Pass serialized data and session flag into template 
-    res.render('userlanding', { 
+    res.render('homepage', { 
       gifts, 
       logged_in: req.session.logged_in 
     });
