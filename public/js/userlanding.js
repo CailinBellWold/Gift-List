@@ -9,18 +9,17 @@ const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/gifts/${id}`, {
-      method: 'PUT',
-    });
+    // const response = await fetch(`/api/gifts/${id}`, {
+    //   method: 'PUT',
+    // });
 
     if (response.ok) {
-      document.location.replace('/userlanding');
+      document.location.replace(`/updateGift/${id}`);
     } else {
       alert('Failed to update gift');
     }
   }
 };
-
 
   const deleteButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
@@ -37,7 +36,7 @@ const updateButtonHandler = async (event) => {
       }
     }
   };
-  
+
   document
     .querySelector('.add-gift-btn')
     .addEventListener('add', addButtonHandler);
