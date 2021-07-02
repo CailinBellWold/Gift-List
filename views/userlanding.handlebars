@@ -1,0 +1,34 @@
+            <section class='add-gift-btn'>
+                <button class='btn btn-warning'>+ Add Gift</button>
+            </section>
+            
+            <section class='gift-list'>
+                <div class="col-12 col-md-7">
+                    <div class="card">
+                        <h3 class="card-header">Your Gift List</h3>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Recipient</th>
+                                    <th scope='col'>Description</th>
+                                    <th scope='col'>Purchased</th>
+                                </tr>
+                            </thead>
+                    {{#if gifts.length}}
+                        {{#each gifts as |gift|}}
+                        <tbody>
+                            <tr><a href='/gift/{{gift.id}}'></a></tr>
+                                <td scope='row'>{{gift.recipientName}}</th>
+                                <td id='description'>{{gift.description}}</td>
+                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td class='btn-group'>
+                                    <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'>Update</button>
+                                    <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
+                                </td>
+                        {{/each}}
+                    {{/if}}
+                    </div>
+                </div>
+            </section>
+
+<script src="./js/userlanding.js"></script>
