@@ -48,7 +48,7 @@
         <!-- Render the sub layout -->
             {{{ body }}}
             <!--BODY/Homepage Handlebars-->
-            <section id='about'>
+            <!-- <section id='about'>
                 <div class='row'>
                     <div class='col-md-5 gx-4 mb-4'>
                         <h3><strong>Welcome to Gift List!</strong></h4>
@@ -67,42 +67,47 @@
                     </div>
 
                 </div>
-            </section>
+            </section> -->
             <!--END BODY/Homepage Handlebars-->
 
             <!--BODY/Userlanding Handelbars -->
-            <!-- <section id='add-gift-button'>
-                <button class='btn btn-warning' data-id='{{gift.id}}'>+ Add Gift</button>
-            </section>
+            <div class='d-flex flex-row-reverse mr-1'>
+                <section class='add-gift-btn'>
+                    <button class='btn btn-warning'>+ Add Gift</button>
+                </section>
+            </div>
 
-            <section id='gift-list'>
-                <div class='col-10'>
-                    <div class="card">
-                        <h3 class="card-header">Your Gift List</h3>
-                        <table class="table table-hover">
+            <section class='gift-list'>
+                <div class='col-9'>
+                    <div class='card'>
+                        <h3 class='card-header'>Your Gift List</h3>
+                        <table class='table table-hover'>
                             <thead>
                                 <tr>
                                     <th scope='col'>Recipient</th>
                                     <th scope='col'>Description</th>
-                                    <th scope='col'>Purchased</th>
+                                    <th scope='col'>Gift Complete</th>
+                                    <th scope='col'></th>
                                 </tr>
                             </thead>
                     {{#if gifts.length}}
                         {{#each gifts as |gift|}}
                         <tbody>
-                            <tr><a href='/gift/{{gift.id}}'></a></tr>
+                            <tr><a href='/gift/{{gift.id}}'></a>
                                 <td scope='row'>{{gift.recipientName}}</th>
                                 <td id='description'>{{gift.description}}</td>
                                 <td id='purchased'>{{gift.purchased}}</td>
-                                <td class='btn-group'>
+                                <td class='edit-btns'>
                                     <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'>Update</button>
                                     <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
                                 </td>
+                            </tr>
+                        </tbody>
                         {{/each}}
                     {{/if}}
                     </div>
                 </div>
-            </section> -->
+            </section>
             <!--END BODY/Userlanding Handelbars -->
 
         </div>

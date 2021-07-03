@@ -22,12 +22,11 @@
     <header>
         <nav class='navbar navbar-expand-lg navbar-light fixed-top px-3 giftlist-navbar'>
             <img src="images/gift-list-logo.png" alt="Gift List logo">
-            <ul class='navbar-nav d-flex flex-row w-100 offset-md-7'>
+            <ul class='navbar-nav d-flex flex-row w-100 offset-md-8 cmb-media-ul'>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
-                <li class='nav-item'><a class='nav-link btn btn-secondary' href='/userlanding' target='_blank' rel='noreferrer noopener'>Logout</a></li>
                 {{else}}
-                <li class='nav-item'><a class='nav-link btn btn-secondary' href='/login' target='_blank' rel='noreferrer noopener'>Login</a></li>
+                <li class='nav-item'><a class='nav-link btn btn-secondary' href='/login' target='_blank' rel='noreferrer noopener'>Sign In</a></li>
                 <li class='nav-item'><a class='nav-link btn btn-primary' href='/login' target='_blank' rel='noreferrer noopener'>Sign Up</a></li>
                 {{/if}}
             </ul>
@@ -59,7 +58,7 @@
     
     {{!-- Render script for logged in users only --}}
     {{#if logged_in}}
-    <script src="../../public/js/logout.js"></script>
+    <script src="/js/logout.js"></script>
     {{/if}}
 <!--Scripts for Bootstrap-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
