@@ -1,7 +1,10 @@
+            <div class='d-flex flex-row-reverse'>
+
             <section class='add-gift-btn'>
                 <button class='btn btn-warning'>+ Add Gift</button>
             </section>
-            
+            </div>
+
             <section class='gift-list'>
                 <div class="col-12 col-md-9">
                     <div class="card">
@@ -18,7 +21,7 @@
                     {{#if gifts.length}}
                         {{#each gifts as |gift|}}
                         <tbody>
-                            <tr><a href='/gift/{{gift.id}}'></a></tr>
+                            <tr><a href='/gift/{{gift.id}}'></a>
                                 <td scope='row'>{{gift.recipientName}}</th>
                                 <td id='description'>{{gift.description}}</td>
                                 <td id='purchased'>{{gift.purchased}}</td>
@@ -26,6 +29,8 @@
                                     <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'>Update</button>
                                     <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
                                 </td>
+                            </tr>
+                        </tbody>
                         {{/each}}
                     {{/if}}
                     </div>
