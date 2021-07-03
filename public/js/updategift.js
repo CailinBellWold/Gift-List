@@ -22,3 +22,7 @@ const newFormHandler = async (event) => {
     }
   }
 };
+
+document
+  .querySelector(".updateGiftForm")
+  .addEventListener("submit", newFormHandler);
