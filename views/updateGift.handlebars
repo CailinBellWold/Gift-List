@@ -1,43 +1,45 @@
-<div class='row'>
-  <div class='col-md-2'>
-    <div style='margin-top: 10%'>
+<div class="row">
+  <div class="col-md-2">
+    <div style="margin-top: 10%">
       <h3
-        style='background-color: blue;
+        style="background-color: blue;
     color: white;
     text-align: center;
-    border: solid;'
+    border: solid;"
       >Giftee</h3>
     </div>
-    <div style='margin-top: 10%'>
+    <div style="margin-top: 10%">
       <h3
-        style='background-color: darkmagenta;
+        style="background-color: darkmagenta;
     color: white;
     text-align: center;
-    border: solid;'
+    border: solid;"
       >Description</h3>
     </div>
-    <div style='margin-top: 10%'>
+    <div style="margin-top: 10%">
       <h3
-        style='background-color: mediumvioletred;
+        style="background-color: mediumvioletred;
     color: white;
     text-align: center;
-    border: solid;'
+    border: solid;"
       >Budget</h3>
     </div>
-    <div style='margin-top: 10%'>
+    <div style="margin-top: 10%">
       <h3
-        style='background-color: darkgray;
+        style="background-color: darkgray;
     color: white;
     text-align: center;
-    border: solid;'
+    border: solid;"
       >Notes</h3>
     </div>
   </div>
 
-  <div class='col-md-10'>
+  <div class="col-md-10">
 
-    <form class='form newGiftForm'>
-      <div class='form-group'>
+    {{! Changed some id names down below to allow them to be more descriptive }}
+
+    <form class="form updateGiftForm">
+      <div class="form-group">
         <input
           class='form-input'
           type='text'
@@ -45,48 +47,48 @@
           placeholder={{gift.recipientName}}
         />
       </div>
-      <div class='form-group'>
+      <div class="form-group">
         <input
-          class='form-input'
-          type='text'
-          id='newgiftDescription'
-          placeholder='Gift Description'
+          class="form-input"
+          type="text"
+          id="giftDescription"
+          placeholder="Gift Description"
         />
       </div>
-      <div class='form-group'>
+      <div class="form-group">
         <input
-          class='form-input'
-          type='text'
-          id='newgiftBudget'
-          placeholder='Gift Budget'
+          class="form-input"
+          type="text"
+          id="giftBudget"
+          placeholder="Gift Budget"
         />
       </div>
-      <div class='form-group'>
+      <div class="form-group">
         <input
-          class='form-input'
-          type='text'
-          id='newgiftNotes'
-          placeholder='Notes'
+          class="form-input"
+          type="text"
+          id="giftNotes"
+          placeholder="Notes"
         />
       </div>
     </form>
   </div>
 </div>
 <button
-  type='submit'
-  class='btn btn-primary submit'
-  id='giftSave'
-  style='float: right; background-color: dodgerblue;'
+  type="submit"
+  class="btn btn-primary submit"
+  id="giftSave"
+  style="float: right; background-color: dodgerblue;"
 >Save</button>
 <button
-  type='submit'
-  class='btn btn-primary submit'
-  id='giftCancel'
-  style='float: right; margin-right: 2%; background-color: deepskyblue;'
+  type="submit"
+  class="btn btn-primary submit"
+  id="giftCancel"
+  style="float: right; margin-right: 2%; background-color: deepskyblue;"
 >Cancel</button>
-<p style='float: right; margin-right: 2%;'>Purchased</p>
-<label class='switch' style='float: right; margin-top: 5px;'>
-  <input type='checkbox' />
+<p style="float: right; margin-right: 2%;">Purchased</p>
+<label class="switch" style="float: right; margin-top: 5px;">
+  <input type="checkbox" />
 </label>
 
 <script src='./js/updateGift.js'></script>
