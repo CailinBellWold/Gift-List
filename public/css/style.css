@@ -34,6 +34,7 @@ body {
 
 main {
     padding-top: 12rem;
+    padding-bottom: 13rem;
 }
 
 .giftlist-navbar {
@@ -165,106 +166,29 @@ h3, h4, h5 {
     color: var(--c-lneutral);
 }
 
-/*MediaQuery for Mobile*/
-/* @media screen and (max-width: 480px) {
+/*MediaQueries*/
+@media screen and (max-width: 1399px){
     body {
-        background-color: var(--c-ddblue);
-        color: var(--c-llneutral);
+    margin: 0 2%;
     }
 
-    main {
-        padding-top: 6rem;
+    .cmb-media-ul {
+        margin-left: 55rem;
     }
+}
 
-    h4 {
-        color: var(--c-dblue);
-    }
-
-    .cmb-fa {
-        text-decoration: none;
-        color: var(--c-llneutral);
-        font-size: 1.5em;
-    }
-
-    .cmb-fa:hover {
-        color: var(--c-dpink);
-        text-shadow: 8px 10px 10px var(--c-blue);
-    }
-
-    .text-muted {
-        color: var(--c-llneutral) !important;
-    }
-
-    .giftlist-navbar {
-        background-image: linear-gradient(var(--c-lneutral), var(--c-neutral));
-        box-shadow: none;
-    }
-
-    .card-title,
-    .card-text {
-        color: var(--c-dblue);
+@media screen and (max-width: 1285px){
+    body {
+        margin: 0 2%;
     }
     
-    .card {
-        border-radius: 4px;
-        background: var(--c-neutral);
-        box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
-        transition:  none;
-        opacity: 1;
+    .cmb-media-ul {
+        margin-left: 40rem;
     }
-            
-    .card:hover {
-        transform: scale(1.03);
-        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-        opacity: 1;
+}
+
+@media screen and (max-width: 1044px){
+    .cmb-media-ul {
+        margin-left: 30rem;
     }
-    
-    footer .cmb-fa {
-        text-decoration: none;
-        color: var(--c-ddblue);
-        font-size: 1.5em;
-    }
-    
-    footer .cmb-fa:hover {
-        color: var(--c-dpink);
-        text-shadow: 8px 10px 10px var(--c-taupe);
-    }
-} */
-    
-  /* @media screen and (max-width: 1173px) {
-    body {
-      margin: 0 2%;
-    }
-  }
-  @media screen and (max-width: 1022px) {
-    body {
-      margin: 0 0%;
-    }
-  }
-  @media screen and (max-width: 1012px) {
-    body {
-      margin: 0 2%;
-    }
-    .about,
-    .projects {
-      flex-direction: column;
-      padding: 2% 2% 2% 2%;
-    }
-    .h2, {
-      display: inline-block;
-      text-align: center;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-items: left;
-      padding: 2% 0 2% 0;
-      width: 100%;
-    }
-  } */
-  
-  /* When using `max-width` as the breakpoint, you must go from widest to narrowest to avoid conflict
-  320px — 480px: Mobile devices
-  481px — 768px: iPads, Tablets
-  769px — 1024px: Small screens, laptops
-  1025px — 1200px: Desktops, large screens
-  1201px and more —  Extra large screens, TV*/
-  
+}
