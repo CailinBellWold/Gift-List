@@ -3,13 +3,13 @@ const newFormHandler = async (event) => {
 
   const giftee = document.querySelector("#giftGiftee").value.trim();
   const description = document.querySelector("#giftDescription").value.trim();
-  const budget = document.querySelector("#giftBudget").value.trim();
-  const notes = document.querySelector("#giftNotes").value.trim();
+  //   const budget = document.querySelector("#giftBudget").value.trim();
+  //   const notes = document.querySelector("#giftNotes").value.trim();
 
-  if (giftee && description && budget && notes) {
+  if (giftee && description) {
     const response = await fetch(`/api/giftRoutes`, {
       method: "PUT",
-      body: JSON.stringify({ giftee, description, budget, notes }),
+      body: JSON.stringify({ giftee, description }),
       headers: {
         "Content-Type": "application/json",
       },
