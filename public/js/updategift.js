@@ -1,15 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
-  const giftee = document.querySelector("#giftGiftee").value.trim();
-  const description = document.querySelector("#giftDescription").value.trim();
+//DANNY TO-DO: Update/clean ID here and on newGift handlebars
+  const recipientName = document.querySelector("#newgiftGiftee").value.trim();
+  const description = document.querySelector("#newgiftDescription").value.trim();
   //   const budget = document.querySelector("#giftBudget").value.trim();
   //   const notes = document.querySelector("#giftNotes").value.trim();
 
-  if (giftee && description) {
+  if (recipientName && description) {
     const response = await fetch(`/api/giftRoutes`, {
       method: "PUT",
-      body: JSON.stringify({ giftee, description }),
+      body: JSON.stringify({ recipientName, description }),
       headers: {
         "Content-Type": "application/json",
       },
@@ -18,7 +18,7 @@ const newFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace("/userlanding");
     } else {
-      alert("Failed to update project");
+      alert("Failed to update gift");
     }
   }
 };
