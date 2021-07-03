@@ -48,6 +48,10 @@ router.get('/userlanding', withAuth, async (req, res) => {
   }
 });
 
+router.get('/newGift', withAuth, async (req, res) => {
+  res.render('newGift');
+});
+
 router.get('/updateGift/:id', async (req, res) => {
   try {
     const giftData = await Gift.findByPk(req.params.id, {
@@ -70,5 +74,35 @@ router.get('/updateGift/:id', async (req, res) => {
   }
 });
 
+// Use withAuth middleware to prevent access to route
+router.get('/userlanding', withAuth, async (req, res) => {
+  try {
+    // Find the logged in user based on the session ID
+    const userData = await User.findByPk(req.session.user_id, {
+      // attributes: { exclude: ['password'] },
+      // include: [{ model: User }], ... that will come by default.
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render('userlanding', {
+      ...user,
+      logged_in: true
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/userlanding');
+    return;
+  }
+
+  res.render('login');
+});
+  
 module.exports = router;
 
