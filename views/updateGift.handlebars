@@ -16,7 +16,8 @@
     border: solid;"
       >Description</h3>
     </div>
-    <div style="margin-top: 10%">
+     {{!-- keep bottom portion commented out just in case we decide to add budget and notes --}}
+    {{!-- <div style="margin-top: 10%">
       <h3
         style="background-color: mediumvioletred;
     color: white;
@@ -31,7 +32,7 @@
     text-align: center;
     border: solid;"
       >Notes</h3>
-    </div>
+    </div> --}}
   </div>
 
   <div class="col-md-10">
@@ -41,9 +42,9 @@
     <form class="form updateGiftForm">
       <div class="form-group">
         <input
-          class='form-input'
-          type='text'
-          id='newgiftGiftee'
+          class="form-input"
+          type="text"
+          id="giftGiftee"
           placeholder={{gift.recipientName}}
         />
       </div>
@@ -52,15 +53,16 @@
           class="form-input"
           type="text"
           id="giftDescription"
-          placeholder="Gift Description"
+          placeholder={{gift.description}}
         />
       </div>
-      <div class="form-group">
+      {{!-- keep bottom portion commented out just in case we decide to add budget and notes --}}
+      {{!-- <div class="form-group">
         <input
           class="form-input"
           type="text"
           id="giftBudget"
-          placeholder="Gift Budget"
+          placeholder={{gift.recipientName}}
         />
       </div>
       <div class="form-group">
@@ -68,8 +70,8 @@
           class="form-input"
           type="text"
           id="giftNotes"
-          placeholder="Notes"
-        />
+          placeholder={{gift.recipientName}}
+        /> --}}
       </div>
     </form>
   </div>
@@ -91,4 +93,4 @@
   <input type="checkbox" />
 </label>
 
-<script src='./js/updateGift.js'></script>
+<script src="./js/updateGift.js"></script>
