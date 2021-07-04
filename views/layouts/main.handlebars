@@ -25,6 +25,7 @@
             <ul class='navbar-nav d-flex flex-row w-100 offset-md-8 cmb-media-ul'>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
+                <li class='nav-item'><a class='nav-link btn btn-secondary' id='logout' href='/userlanding' target='_blank' rel='noreferrer noopener'>Sign Out</a></li>
                 {{else}}
                 <li class='nav-item'><a class='nav-link btn btn-secondary' href='/login' target='_blank' rel='noreferrer noopener'>Sign In</a></li>
                 <li class='nav-item'><a class='nav-link btn btn-primary' href='/login' target='_blank' rel='noreferrer noopener'>Sign Up</a></li>
