@@ -26,12 +26,9 @@ router.get("/login", (req, res) => {
 router.get("/userlanding", withAuth, async (req, res) => {
   try {
     const giftData = await Gift.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["id"], // There's no 'name' attribute, correct?
-        },
-      ],
+      where: {
+        user_id: req.session.user_id,
+      },
     });
     // Serialize data so the template can read it
     const gifts = giftData.map((gift) => gift.get({ plain: true }));
@@ -53,12 +50,9 @@ router.get("/newGift", withAuth, async (req, res) => {
 router.get("/updateGift/:id", withAuth, async (req, res) => {
   try {
     const giftData = await Gift.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["email"],
-        },
-      ],
+      where: {
+        user_id: req.session.user_id,
+      },
     });
     const gift = giftData.get({ plain: true });
     res.render("updateGift", {
@@ -104,30 +98,30 @@ module.exports = router;
 
 // Use withAuth middleware to prevent access to route
 // Wasn't working on Donna's machine without this. We will take a look at this to see if we need it.
-router.get("/userlanding", withAuth, async (req, res) => {
-  console.log("get /userlanding called");
-  console.log("req.params:\n", JSON.stringify(req.params, null, 2));
-  console.log("req.session:\n", JSON.stringify(req.session, null, 2));
-  try {
-    // Find the logged in user based on the session ID
-    const userData = await User.findByPk(req.session.user_id, {
-      // attributes: { exclude: ['password'] },
-      // include: [{ model: User }], ... that will come by default.
-    });
-    const user = userData.get({ plain: true });
-    res.render("userlanding", {
-      ...user,
-      logged_in: true,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-router.get("/login", (req, res) => {
-  // If the user is already logged in, redirect the request to another route
-  if (req.session.logged_in) {
-    res.redirect("/userlanding");
-    return;
-  }
-  res.render("login");
-});
+// router.get('/userlanding', withAuth, async (req, res) => {
+//   console.log('get /userlanding called');
+//   console.log('req.params:\n', JSON.stringify(req.params, null, 2));
+//   console.log('req.session:\n', JSON.stringify(req.session, null, 2));
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       // attributes: { exclude: ['password'] },
+//       // include: [{ model: User }], ... that will come by default.
+//     });
+//     const user = userData.get({ plain: true });
+//     res.render('userlanding', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+// router.get('/login', (req, res) => {
+//   // If the user is already logged in, redirect the request to another route
+//   if (req.session.logged_in) {
+//     res.redirect('/userlanding');
+//     return;
+//   }
+//   res.render('login');
+// });

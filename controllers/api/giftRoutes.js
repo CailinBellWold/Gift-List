@@ -17,7 +17,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // PUT route to update the users gift
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   // update a category by its `id` value
   try {
     const giftName = await Gift.update(req.body, {
@@ -37,7 +37,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const giftData = await Gift.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 
