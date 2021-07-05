@@ -44,5 +44,5 @@ document
   .addEventListener('update', updateButtonHandler);
 
 document
-  .querySelector('.gift-list')
-  .addEventListener('delete', deleteButtonHandler);
+  .querySelector('#deleteBtn')
+  .addEventListener('click', deleteButtonHandler);

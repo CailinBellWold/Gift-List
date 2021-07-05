@@ -26,12 +26,10 @@ router.get('/login', (req, res) => {
 router.get('/userlanding', withAuth, async (req, res) => {
   try {
     const giftData = await Gift.findAll({
-      include: [
+      where: 
         {
-          model: User,
-          attributes: ['id'], // There's no 'name' attribute, correct?
+         user_id: req.session.user_id,
         },
-      ],
     });
     // Serialize data so the template can read it
     const gifts = giftData.map((gift) => gift.get({ plain: true }));
@@ -50,15 +48,12 @@ router.get('/newGift', withAuth, async (req, res) => {
   res.render('newGift');
 });
 
-router.get('/updateGift/:id', async (req, res) => {
+router.get('/updateGift/:id', withAuth, async (req, res) => {
   try {
     const giftData = await Gift.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['email'],
-        },
-      ],
+      where: {
+        user_id: req.session.user_id,
+      }
     });
     const gift = giftData.get({ plain: true });
     res.render('updateGift', {
