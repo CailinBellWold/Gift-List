@@ -5,13 +5,14 @@ import { Selector } from 'testcafe';
 const BASE_URL = 'http://localhost:3001/';
 const LOGIN_PATH_NAME = '/login';
 const LOGIN_URL = `${BASE_URL}login`;
+const USER_LANDING_URL = `${BASE_URL}userlanding`
 
 const btnSignIn = Selector('a').withExactText('Sign In');
 const btnSignUp = Selector('a').withExactText('Sign Up');
 const btnSignOut = Selector('a').withExactText('Sign Out');
 
 const txtLoginEmail = Selector('input#email-login');
-const txtPassword = Selector('input#password-login');
+const txtLoginPassword = Selector('input#password-login');
 const btnSubmitSignIn = Selector('button')
   .withAttribute('type', 'submit')
   .withText('Sign In');
@@ -42,10 +43,13 @@ test('Login as karen@small.com and log back out', async t => {
   // Resize the new window so we can actually see that we are logged in ...
   // await t.resizeWindow(1000, 700);
   await t.typeText(txtLoginEmail, 'karen@small.com');
-  await t.typeText(txtPassword, '1password');
+  await t.typeText(txtLoginPassword, '1password');
   // The Add Gift section should not be showing yet ...
   await t.expect(sectionAddGift.exists).notOk();
   await t.click(btnSubmitSignIn);
+
+  url = await t.eval(() => document.documentURI);
+  await t.expect(url).eql(USER_LANDING_URL);
   // Now the Add Gift section should be showing ...
   await t.expect(sectionAddGift.exists).ok();
 
@@ -55,11 +59,11 @@ test('Login as karen@small.com and log back out', async t => {
 
   await t.click(btnSignOut);
 
+  url = await t.eval(() => document.documentURI);
+  await t.expect(url).eql(BASE_URL);
+
   await t.expect(btnSignIn.exists).ok();
   await t.expect(btnSignUp.exists).ok();
   await t.expect(btnSignOut.exists).notOk();
   await t.expect(sectionAddGift.exists).notOk();
-
-  url = await t.eval(() => document.documentURI);
-  await t.expect(url).eql(BASE_URL);
 });
