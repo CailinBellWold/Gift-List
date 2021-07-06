@@ -47,23 +47,6 @@ router.get("/newGift", withAuth, async (req, res) => {
   res.render("newGift");
 });
 
-router.get("/updateGift/:id", withAuth, async (req, res) => {
-  try {
-    const giftData = await Gift.findByPk(req.params.id, {
-      where: {
-        user_id: req.session.user_id,
-      },
-    });
-    const gift = giftData.get({ plain: true });
-    res.render("updateGift", {
-      gift,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 // Use withAuth middleware to prevent access to route
 router.get("/userlanding", withAuth, async (req, res) => {
   try {
