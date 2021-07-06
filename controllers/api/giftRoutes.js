@@ -16,8 +16,27 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.get("/:id", withAuth, async (req, res) => {  
+  try {
+    const giftData = await Gift.findByPk(req.params.id, {
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    const gift = giftData.get({ plain: true });
+
+    res.render("updateGift", {
+      gift,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 // PUT route to update the users gift
-router.put('/:id', async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   // update a category by its `id` value
   try {
     const giftName = await Gift.update(req.body, {
@@ -37,7 +56,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     const giftData = await Gift.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
       },
     });
 

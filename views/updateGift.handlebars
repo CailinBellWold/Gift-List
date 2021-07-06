@@ -3,18 +3,22 @@
     <div style="margin-top: 10%">
       <h3
         style="background-color: blue;
-    color: white;
-    text-align: center;
-    border: solid;"
-      >Giftee</h3>
+        color: white;
+        text-align: center;
+        border: solid;"
+      >
+        Giftee
+      </h3>
     </div>
     <div style="margin-top: 10%">
       <h3
         style="background-color: darkmagenta;
-    color: white;
-    text-align: center;
-    border: solid;"
-      >Description</h3>
+        color: white;
+        text-align: center;
+        border: solid;"
+      >
+        Description
+      </h3>
     </div>
      {{!-- keep bottom portion commented out just in case we decide to add budget and notes --}}
     {{!-- <div style="margin-top: 10%">
@@ -56,41 +60,29 @@
           placeholder={{gift.description}}
         />
       </div>
-      {{!-- keep bottom portion commented out just in case we decide to add budget and notes --}}
-      {{!-- <div class="form-group">
-        <input
-          class="form-input"
-          type="text"
-          id="giftBudget"
-          placeholder={{gift.recipientName}}
-        />
-      </div>
-      <div class="form-group">
-        <input
-          class="form-input"
-          type="text"
-          id="giftNotes"
-          placeholder={{gift.recipientName}}
-        /> --}}
-      </div>
+      <button
+        type='submit'
+        class="btn btn-primary submit"
+        id="giftSave"
+        style="float: right; background-color: dodgerblue;"
+      >
+        Save
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary submit"
+        id="giftCancel"
+        style="float: right; margin-right: 2%; background-color: deepskyblue;"
+      >
+        Cancel
+      </button>
+      <p style="float: right; margin-right: 2%;">Purchased</p>
+      <label class="switch" style="float: right; margin-top: 5px;">
+        <input type="checkbox" />
+      </label>
     </form>
   </div>
 </div>
-<button
-  type="submit"
-  class="btn btn-primary submit"
-  id="giftSave"
-  style="float: right; background-color: dodgerblue;"
->Save</button>
-<button
-  type="submit"
-  class="btn btn-primary submit"
-  id="giftCancel"
-  style="float: right; margin-right: 2%; background-color: deepskyblue;"
->Cancel</button>
-<p style="float: right; margin-right: 2%;">Purchased</p>
-<label class="switch" style="float: right; margin-top: 5px;">
-  <input type="checkbox" />
-</label>
 
-<script src="./js/updateGift.js"></script>
+
+<script src="../../js/updateGift.js"></script>

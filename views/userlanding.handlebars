@@ -24,8 +24,8 @@
                                 <td id='description'>{{gift.description}}</td>
                                 <td id='purchased'>{{gift.purchased}}</td>
                                 <td class='edit-btns'>
-                                    <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'><a href='/updateGift/{{gift.id}}'>Update</a></button>
-                                    <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
+                                    <button class='btn btn-warning edit-gift-btn' data-id='{{gift.id}}'>Update</button>
+                                    <button id="deleteBtn" class='btn btn-danger delete-gift-btn' data-id='{{gift.id}}'>Delete</button>
                                     
                                 </td>
                             </tr>
