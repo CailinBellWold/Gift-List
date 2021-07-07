@@ -32,9 +32,17 @@ const saveNewGiftHandler = async (event) => {
   if (response.ok) {
     document.location.replace("/userlanding");
   } else {
-    alert("Failed to delete project");
+    alert('Failed to add project');
   }
 };
+
+const cancelButtonHandler = async () => {
+  document.location.replace('/userlanding');
+}
+
+document
+  .querySelector('.newGiftForm')
+  .addEventListener('submit', cancelButtonHandler);
 
 document
   .querySelector(".newGiftForm")

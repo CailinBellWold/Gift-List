@@ -26,6 +26,14 @@ const newFormHandler = async (event) => {
   }
 };
 
+const cancelButtonHandler = async () => {
+  document.location.replace('/userlanding');
+}
+
+document
+  .querySelector('.updateGiftForm')
+  .addEventListener('submit', cancelButtonHandler);
+
 document
   .querySelector(".updateGiftForm")
   .addEventListener("submit", newFormHandler);
