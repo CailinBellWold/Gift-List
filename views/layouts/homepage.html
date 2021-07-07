@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Gift List">
+    <meta name="keywords" content="Gift, Organize, Holiday, Holidays">
+    <meta name="author" content="Cailin Bell Wold, Danny Roubin, Donna Crawford, and Tyler Hance">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?&family=Poppins:wght@200;300;400;500&family=Roboto:wght@300;400;500;700&display=swap" >
+    <link rel="stylesheet" href="../../public/css/style.css">
+    <title>Gift List</title>
+    <link rel="shortcut icon" type="image/png" href="../../public/images/favicon.png"/>
+</head>
+
+<body>
+    <header>
+        <nav class='navbar navbar-expand-lg navbar-light fixed-top px-3 giftlist-navbar'>
+            <img src="../../public/images/gift-list-logo.png" alt="Gift List logo">
+            <!-- <h1>Gift List</h1> -->
+        <!-- <a class='navbar-brand' href='#'>Gift List</a> -->
+        <!-- <button class='navbar-toggler' type='button' data-toggle='collapse' data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+            <span class='navbar-toggler-icon'></span>
+        </button> -->
+        <!-- <div class='collapse navbar-collapse' id='navbarToggler'>
+            
+        </div> -->
+            <ul class='navbar-nav d-flex flex-row w-100 offset-md-7'>
+                <!-- Conditionally render login or logout links -->
+                {{#if logged_in}}
+                <!-- <a href='/userlanding'>User Landing</a> -->
+                <li class='nav-item'><a class='nav-link btn btn-secondary' href='/userlanding' target='_blank' rel='noreferrer noopener'>Logout</a></li>
+                {{else}}
+                <li class='nav-item'><a class='nav-link btn btn-secondary' href='/login' target='_blank' rel='noreferrer noopener'>Login</a></li>
+                <li class='nav-item'><a class='nav-link btn btn-primary' href='/login' target='_blank' rel='noreferrer noopener'>Sign Up</a></li>
+                {{/if}}
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class='container'>
+        <!-- Render the sub layout -->
+            {{{ body }}}
+            <!--BODY/Homepage Handlebars-->
+            <!-- <section id='about'>
+                <div class='row'>
+                    <div class='col-md-5 gx-4 mb-4'>
+                        <h3><strong>Welcome to Gift List!</strong></h4>
+                        <p class='text-muted'>Even trees need a friend. We all need friends. Just think about these things in your mind and drop em' on canvas. Let your imagination be your guide. This is probably the greatest thing that's ever happened in my life. Let your heart be your guide. Let's give him a friend too. Everybody needs a friend.</p>
+
+                        <p><strong>Description</strong></p>
+                        <p class='text-muted'>
+                            Even trees need a friend. We all need friends. Just think about these things in your mind and drop em' on canvas. Let your imagination be your guide. This is probably the greatest thing that's ever happened in my life. Let your heart be your guide. Let's give him a friend too. Everybody needs a friend.</p>
+                    </div>
+
+                    <div class='col-md-7 gx-5'>
+                    <figure class='figure-image'>
+                    <img src='../../public/images/debby-hudson-VO7p_CgTylQ-unsplash.jpg' alt='Photo by Debby Hudson on Unsplash' class='img-fluid rounded mb-3'/>
+                    <a href='#!'></a>
+                    </figure>
+                    </div>
+
+                </div>
+            </section> -->
+            <!--END BODY/Homepage Handlebars-->
+
+            <!--BODY/Userlanding Handelbars -->
+            <div class='d-flex flex-row-reverse mr-1'>
+                <section class='add-gift-btn'>
+                    <button class='btn btn-warning'>+ Add Gift</button>
+                </section>
+            </div>
+
+            <section class='gift-list'>
+                <div class='col-9'>
+                    <div class='card'>
+                        <h3 class='card-header'>Your Gift List</h3>
+                        <table class='table table-hover'>
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Recipient</th>
+                                    <th scope='col'>Description</th>
+                                    <th scope='col'>Gift Complete</th>
+                                    <th scope='col'></th>
+                                </tr>
+                            </thead>
+                    {{#if gifts.length}}
+                        {{#each gifts as |gift|}}
+                        <tbody>
+                            <tr><a href='/gift/{{gift.id}}'></a>
+                                <td scope='row'>{{gift.recipientName}}</th>
+                                <td id='description'>{{gift.description}}</td>
+                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td class='edit-btns'>
+                                    <button class='btn btn-warning' id='edit-gift-btn' data-id='{{gift.id}}'>Update</button>
+                                    <button class='btn btn-danger' data-id='{{gift.id}}'>Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                        {{/each}}
+                    {{/if}}
+                    </div>
+                </div>
+            </section>
+            <!--END BODY/Userlanding Handelbars -->
+
+        </div>
+    </main>
+
+    <footer class='footer'>
+        <section id='contact' class='text-center py-4 align-items-center cmb-contact'>
+            <h4>Contact</h4>
+            <a class='px-3' href='https://github.com/CailinBellWold/Project-2-Gift-List' target='_blank' rel='noreferrer noopener'> 
+                <i class='fab fa-github cmb-fa'></i>
+            </a>
+            <a class='px-3' href='mailto:cmbellwold@gmail.com?subject=Contact from Gift List Site' target='_blank' rel='noreferrer noopener'>
+                <i class='fas fa-envelope cmb-fa'></i>
+            </a>
+        </section>
+    
+        <div class='text-center p-3 cmb-madeforyou'>
+            <p>©2021 Cailin Bell Wold, Danny Roubin, Donna Crawford, and Tyler Hance</p>
+        </div>
+    </footer>
+    
+    <!-- Render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="../../public/js/logout.js"></script>
+    {{/if}}
+<!--Scripts for Bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>

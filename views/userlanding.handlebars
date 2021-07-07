@@ -1,0 +1,38 @@
+            <div class='d-flex flex-row-reverse mr-1'>
+                <section id='btn-add-gift' class='add-gift-btn'>
+                    <button class='btn btn-warning'>+ Add Gift</button>
+                </section>
+            </div>
+            <section class='gift-list'>
+                <div class='col-9'>
+                    <div class='card'>
+                        <h3 class='card-header'>Your Gift List</h3>
+                        <table class='table table-hover'>
+                            <thead>
+                                <tr>
+                                    <th scope='col'>Recipient</th>
+                                    <th scope='col'>Description</th>
+                                    <th scope='col'>Gift Complete</th>
+                                    <th scope='col'></th>
+                                </tr>
+                            </thead>
+                    {{#if gifts.length}}
+                        {{#each gifts as |gift|}}
+                        <tbody>
+                            <tr><a href='/gift/{{gift.id}}'></a>
+                                <td scope='row'>{{gift.recipientName}}</th>
+                                <td id='description'>{{gift.description}}</td>
+                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td class='edit-btns'>
+                                    <button class='btn btn-warning edit-gift-btn' data-id='{{gift.id}}'>Update</button>
+                                    <button id="deleteBtn" class='btn btn-danger delete-gift-btn' data-id='{{gift.id}}'>Delete</button>
+                                    
+                                </td>
+                            </tr>
+                        </tbody>
+                        {{/each}}
+                    {{/if}}
+                    </div>
+                </div>
+            </section>
+<script src='./js/userlanding.js'></script>

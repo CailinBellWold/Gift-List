@@ -1,3 +1,9 @@
+.DS_Store
+
+node_modules
+
+.env
+
 # Logs
 logs
 *.log
@@ -102,3 +108,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+.homepage.html

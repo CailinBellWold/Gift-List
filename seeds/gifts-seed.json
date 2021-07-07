@@ -1,0 +1,38 @@
+[
+  {
+    "recipientName": "Daisy Camp",
+    "description": "Unicorn stuffed animal from Amazon.com.",
+    "purchased": false,
+    "user_id": 1
+  },
+  {
+    "recipientName": "John Smith",
+    "description": "Nerf gun from Target.",
+    "purchased": false,
+    "user_id": 2
+  },
+  {
+    "recipientName": "Karen Fields",
+    "description": "Dress from J.Crew.",
+    "purchased": false,
+    "user_id": 3
+  },
+  {
+    "recipientName": "Daisy Camp",
+    "description": "Winnie the Pooh at Disney Store.",
+    "purchased": false,
+    "user_id": 1
+  },
+  {
+    "recipientName": "John Smith",
+    "description": "Xbox One from Microsoft Store.",
+    "purchased": false,
+    "user_id": 2
+  },
+  {
+    "recipientName": "Daisy Camp",
+    "description": "Blouse from Gap.",
+    "purchased": false,
+    "user_id": 3
+  }
+]
