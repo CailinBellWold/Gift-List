@@ -5,7 +5,7 @@ import { Selector } from 'testcafe';
 const BASE_URL = 'http://localhost:3001/';
 const LOGIN_PATH_NAME = '/login';
 const LOGIN_URL = `${BASE_URL}login`;
-const USER_LANDING_URL = `${BASE_URL}userlanding`
+const USER_LANDING_URL = `${BASE_URL}userlanding`;
 
 const btnSignIn = Selector('a').withExactText('Sign In');
 const btnSignUp = Selector('a').withExactText('Sign Up');
