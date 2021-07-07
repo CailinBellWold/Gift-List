@@ -21,8 +21,9 @@
 <body>
     <header>
         <nav class='navbar navbar-expand-lg navbar-light fixed-top px-3 giftlist-navbar'>
-            <img src="images/gift-list-logo.png" alt="Gift List logo">
-            <ul class='navbar-nav d-flex flex-row w-100 offset-md-8 cmb-media-ul'>
+            <img src='images/gift-list-logo.png' alt='Gift List logo'>
+            <div class='collapse navbar-collapse' id='navbarSupportedContent'></div>
+                <ul class='navbar-nav'>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <li class='nav-item'><a class='nav-link btn btn-secondary' id='logout' href='/userlanding' rel='noreferrer noopener'>Sign Out</a></li>
@@ -32,6 +33,7 @@
                 <li class='nav-item'><a class='nav-link btn btn-primary' href='/login' rel='noreferrer noopener'>Sign Up</a></li>
                 {{/if}}
             </ul>
+            </div>
         </nav>
     </header>
 
