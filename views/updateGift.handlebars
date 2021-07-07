@@ -6,15 +6,15 @@
       <form class='form updateGiftForm'>
         <div class='form-group'>
           <label for='email-login'>Recipient</label>
-          <input type='text' class='form-control' id='giftGiftee' placeholder='{{gift.recipientName}}'>
+          <input type='text' class='form-control' id='giftGiftee' value='{{gift.recipientName}}'>
         </div>
         <div class='form-group'>
           <label for='password-login'>Description</label>
-          <input type='text' class='form-control' id='giftDescription' placeholder='{{gift.description}}'>
+          <input type='text' class='form-control' id='giftDescription' value='{{gift.description}}'>
         </div>
         <div class='form-group'>
           <label class="switch">Purchased</label>
-          <input type="checkbox">
+          <input type="checkbox" id="giftPurchased">
         </div>
         <button class='btn btn-primary submit' id='giftSave' type='submit'>Save</button>
         <button class='btn btn-primary submit' id='giftCancel' type='submit'>Cancel</button>
