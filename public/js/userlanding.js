@@ -2,20 +2,12 @@ const addButtonHandler = async (event) => {
   document.location.replace('/newGift');
 };
 
-//Still working on this. Need to pass ID to update page.
 const updateButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-
-    // const response = await fetch(`/api/gifts/${id}`, {
-    //   method: 'PUT',
-    // });
-
-    if (response.ok) {
-      document.location.replace(`/updateGift/${id}`);
-    } else {
-      alert('Failed to update gift');
-    }
+    document.location.replace(`/api/gifts/${id}`);
+  } else {
+    alert('Update button did not have a data-id');
   }
 };
 
@@ -32,6 +24,8 @@ const deleteButtonHandler = async (event) => {
     } else {
       alert('Failed to delete project');
     }
+  } else {
+    alert('Delete button did not have a data-id');
   }
 };
 
@@ -40,9 +34,9 @@ document
   .addEventListener('click', addButtonHandler);
 
 document
-  .querySelector('.gift-list')
-  .addEventListener('update', updateButtonHandler);
+  .querySelectorAll('.edit-gift-btn')
+  .forEach(btn => btn.addEventListener('click', updateButtonHandler));
 
 document
-  .querySelector('.gift-list')
-  .addEventListener('delete', deleteButtonHandler);
+  .querySelectorAll('.delete-gift-btn')
+  .forEach(btn => btn.addEventListener('click', deleteButtonHandler));
