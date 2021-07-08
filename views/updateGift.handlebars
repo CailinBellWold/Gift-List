@@ -1,88 +1,26 @@
-<div class="row">
-  <div class="col-md-2">
-    <div style="margin-top: 10%">
-      <h3
-        style="background-color: blue;
-        color: white;
-        text-align: center;
-        border: solid;"
-      >
-        Giftee
-      </h3>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-md-5'>
+      <h2>Update Gift</h2>
+      <small id='updateGiftHelp' class='form-text text-muted'>NOTE: The receipient and description fields cannot be blank.</small>
+      <form class='form updateGiftForm'>
+        <div class='form-group'>
+          <label for='email-login'>Recipient</label>
+          <input type='text' class='form-control' id='giftGiftee' value='{{gift.recipientName}}'>
+        </div>
+        <div class='form-group'>
+          <label for='password-login'>Description</label>
+          <input type='text' class='form-control' id='giftDescription' value='{{gift.description}}'>
+        </div>
+        <div class='form-group'>
+          <label class="switch">Purchased</label>
+          <input type="checkbox" id="giftPurchased" {{#if gift.purchased}}checked{{/if}}>
+        </div>
+        <button class='btn btn-primary submit' id='giftSave' type='submit'>Save</button>
+        <button class='btn btn-primary submit' id='giftCancel' type='submit'>Cancel</button>
+      </form>
     </div>
-    <div style="margin-top: 10%">
-      <h3
-        style="background-color: darkmagenta;
-        color: white;
-        text-align: center;
-        border: solid;"
-      >
-        Description
-      </h3>
-    </div>
-     {{!-- keep bottom portion commented out just in case we decide to add budget and notes --}}
-    {{!-- <div style="margin-top: 10%">
-      <h3
-        style="background-color: mediumvioletred;
-    color: white;
-    text-align: center;
-    border: solid;"
-      >Budget</h3>
-    </div>
-    <div style="margin-top: 10%">
-      <h3
-        style="background-color: darkgray;
-    color: white;
-    text-align: center;
-    border: solid;"
-      >Notes</h3>
-    </div> --}}
-  </div>
-
-  <div class="col-md-10">
-
-    {{! Changed some id names down below to allow them to be more descriptive }}
-
-    <form class="form updateGiftForm">
-      <div class="form-group">
-        <input
-          class="form-input"
-          type="text"
-          id="giftGiftee"
-          placeholder={{gift.recipientName}}
-        />
-      </div>
-      <div class="form-group">
-        <input
-          class="form-input"
-          type="text"
-          id="giftDescription"
-          placeholder={{gift.description}}
-        />
-      </div>
-      <button
-        type='submit'
-        class="btn btn-primary submit"
-        id="giftSave"
-        style="float: right; background-color: dodgerblue;"
-      >
-        Save
-      </button>
-      <button
-        type="submit"
-        class="btn btn-primary submit"
-        id="giftCancel"
-        style="float: right; margin-right: 2%; background-color: deepskyblue;"
-      >
-        Cancel
-      </button>
-      <p style="float: right; margin-right: 2%;">Purchased</p>
-      <label class="switch" style="float: right; margin-top: 5px;">
-        <input type="checkbox" />
-      </label>
-    </form>
   </div>
 </div>
 
-
-<script src="../../js/updateGift.js"></script>
+<script src="/js/updategift.js"></script>

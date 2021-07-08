@@ -1,12 +1,14 @@
-            <div class='d-flex flex-row-reverse mr-1'>
-                <section id='btn-add-gift' class='add-gift-btn'>
+        <div class='container-fluid'>
+            <section id='btn-add-gift' class='add-gift-btn'>
+                <div class='d-flex flex-row-reverse col-12'>
                     <button class='btn btn-warning'>+ Add Gift</button>
-                </section>
-            </div>
+                </div>
+            </section>
+            
             <section class='gift-list'>
-                <div class='col-9'>
+                <div class='col-12'>
                     <div class='card'>
-                        <h3 class='card-header'>Your Gift List</h3>
+                        <h3 class='card-header'>My Gift List</h3>
                         <table class='table table-hover'>
                             <thead>
                                 <tr>
@@ -22,7 +24,7 @@
                             <tr><a href='/gift/{{gift.id}}'></a>
                                 <td scope='row'>{{gift.recipientName}}</th>
                                 <td id='description'>{{gift.description}}</td>
-                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td id='purchased'>{{#if gift.purchased}}Yes{{else}}No{{/if}}</td>
                                 <td class='edit-btns'>
                                     <button class='btn btn-warning edit-gift-btn' data-id='{{gift.id}}'>Update</button>
                                     <button id="deleteBtn" class='btn btn-danger delete-gift-btn' data-id='{{gift.id}}'>Delete</button>
@@ -35,4 +37,6 @@
                     </div>
                 </div>
             </section>
+        </div>
+
 <script src='./js/userlanding.js'></script>

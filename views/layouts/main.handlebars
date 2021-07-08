@@ -15,14 +15,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?&family=Poppins:wght@200;300;400;500&family=Roboto:wght@300;400;500;700&display=swap" >
     <link rel="stylesheet" href="/css/style.css">
     <title>Gift List</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
 </head>
 
 <body>
     <header>
         <nav class='navbar navbar-expand-lg navbar-light fixed-top px-3 giftlist-navbar'>
-            <img src="images/gift-list-logo.png" alt="Gift List logo">
-            <ul class='navbar-nav d-flex flex-row w-100 offset-md-8 cmb-media-ul'>
+            <img src='/images/gift-list-logo.png' alt='Gift List logo'>
+            <div class='collapse navbar-collapse' id='navbarSupportedContent'></div>
+                <ul class='navbar-nav'>
                 <!-- Conditionally render login or logout links -->
                 {{#if logged_in}}
                 <li class='nav-item'><a class='nav-link btn btn-secondary' id='logout' href='/' rel='noreferrer noopener'>Sign Out</a></li>
@@ -32,6 +33,7 @@
                 <li class='nav-item'><a class='nav-link btn btn-primary' href='/login' rel='noreferrer noopener'>Sign Up</a></li>
                 {{/if}}
             </ul>
+            </div>
         </nav>
     </header>
 

@@ -5,6 +5,7 @@ const newFormHandler = async (event) => {
   const id = url.substring(url.lastIndexOf('/') + 1);
   const recipientName = document.getElementById("giftGiftee").value.trim();
   const description = document.getElementById("giftDescription").value.trim();
+  const purchased = document.getElementById("giftPurchased").checked;
   //   keep these two just in case we decide to include the budget and notes
   //   const budget = document.querySelector("#giftBudget").value.trim();
   //   const notes = document.querySelector("#giftNotes").value.trim();
@@ -12,7 +13,7 @@ const newFormHandler = async (event) => {
   if (recipientName && description) {
     const response = await fetch(`/api/gifts/${id}`, {
       method: "PUT",
-      body: JSON.stringify({ recipientName, description }),
+      body: JSON.stringify({ recipientName, description, purchased }),
       headers: {
         "Content-Type": "application/json",
       },
