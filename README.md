@@ -4,13 +4,11 @@
 
 ## Description
 
-Our application aims to make keeping track of gifts for family and friends much easier by allowing a user to create an account, create a gift by taking in account who the gift receiver is and what you're getting for them. Our app also provides users with a page to view all of their existing gifts, as well as an option to delete or update a gift if need be. Overall, our project goal is to reduce the stress of keeping track of what gifts you're getting for people.
+Our application aims to make keeping track of gifts for family and friends much easier by allowing a user to create an account, create a gift by taking in account who the gift receiver is and what you're getting for them. Our app also provides users with a page to view all of their existing gifts, as well as an option to delete, update a gift if need be, and even mark it as being completed. Overall, our project goal is to reduce the stress of keeping track of what gifts you're getting for people.
 
 ### Motivation
 
 Our motivation behind this project was initially to create an app that would allow the user to keep track of Christmas gifts, but we decided to shift our project to be able to be used year-round, for any occasion a person can think of.
-
-### Learning Targets
 
 ## Table of Contents
 
@@ -24,14 +22,14 @@ Our motivation behind this project was initially to create an app that would all
 
 ## Core Objectives Met
 
-1. (IN PROGRESS) When a user views the homepage, they can find a link to log in or create an account.
-2. (IN PROGRESS) When a user attempts to log in or sign up on the login page, they can log in or create a password-protected account.
-3. (IN PROGRESS) When a user views the user's landing page in a logged-in state, they see a list of gifts they have not yet purchased.
-4. (IN PROGRESS) When a user views the user's landing page in a logged-out state, they are redirected to the login page.
-5. (IN PROGRESS) When a user clicks the 'add' button to add a new gift, they have the opportunity to enter information about the new gift, including giftee, description, notes, and budget, and to save the new gift.
-6. (IN PROGRESS) When a user clicks on a gift line from their user landing page to edit a gift, they are able to edit the giftee, description, notes, and budget for that gift line or to check off the gift as purchased, and to save the gift.
-7. (IN PROGRESS) When a user clicks on the save button after having edited or added information about a new gift, they are redirected to their user landing page, where the new or updated gift renders with its associated updates.
-8. (IN PROGRESS) - When the user clicks on the 'purchased/done' toggle on a gift line to mark the gift as purchased, the page updates with the gift marked as purchased.
+1.  When a user views the homepage, they can find a link to log in or create an account.
+2.  When a user attempts to log in or sign up on the login page, they can log in or create a password-protected account.
+3.  When a user views the user's landing page in a logged-in state, they see a list of al gifts they added
+4.  When a user views the user's landing page in a logged-out state, they are redirected to the login page.
+5.  When a user clicks the 'add' button to add a new gift, they have the opportunity to enter information about the new gift, including recipient and description as well as the ability to save the new gift.
+6.  When a user clicks on a gift line from their user landing page to edit a gift, they are able to edit the recipient and description for that gift line or to check off the gift as purchased, and to save the gift.
+7.  When a user clicks on the save button after having edited or added information about a new gift, they are redirected to their user landing page, where the new or updated gift renders with its associated updates.
+8.  When the user clicks on the 'purchased/done' toggle on a gift line to mark the gift as purchased, the page updates with the gift marked as purchased.
 
 ## Technologies Used
 
@@ -43,14 +41,13 @@ Our motivation behind this project was initially to create an app that would all
 - [NPM Sequelize ORM Package](https://www.npmjs.com/package/sequelize)
 - [NPM Express-Session Package](https://www.npmjs.com/package/express-session)
 - [NPM Cookies Package](https://www.npmjs.com/package/cookies)
+- [NPM bcrypt Package](https://www.npmjs.com/package/bcrypt)
 - [NPM TestCafe Package](https://www.npmjs.com/package/testcafe)
-
-<!--We will Likely Use:>
-- [NPM FS Package](https://www.npmjs.com/package/fs)
-- [NPM Path Package](https://www.npmjs.com/package/path)
 - [NPM Router Package](https://www.npmjs.com/package/router)
-- [NPM Util Package](https://www.npmjs.com/package/util)
-- [NPM UUID Package](https://www.npmjs.com/package/uuid) -->
+- [NPM dotenv Package](https://www.npmjs.com/package/dotenv)
+- [NPM mysql2 Package](https://www.npmjs.com/package/mysql2)
+- [NPM nodemon Package](https://www.npmjs.com/package/nodemon)
+- [NPM connect-session-sequelize Package](https://www.npmjs.com/package/connect-session-sequelize?activeTab=versions)
 
 ## Local Installation & Usage
 
@@ -62,7 +59,7 @@ Our motivation behind this project was initially to create an app that would all
 
 ## Deployed App
 
-[This Note Taker app has been deployed on Heroku and is available here] (https://project-2-gift-list.herokuapp.com/)
+[This Note Taker app has been deployed on Heroku and is available here](https://project-2-gift-list.herokuapp.com/)
 
 ## Demo
 
