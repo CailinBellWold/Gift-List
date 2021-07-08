@@ -35,16 +35,8 @@ test('victor@smith.com adds a gift, but then deletes it', async t => {
   await t.expect(url).eql(BASE_URL);
   await t.click(btnSignIn);
 
-  /*
-  const firstWindow = await t.getCurrentWindow();
-  // Clicking "Sign In" opens a new window to the Login Path.
-  // https://testcafe.io/402900/resources/blog/2020-8-26-introducing-multi-window-tests-beta
-  await t.switchToWindow(({url}) => url.pathname === LOGIN_PATH_NAME);
-  */
   url = await t.eval(() => document.documentURI);
   await t.expect(url).eql(LOGIN_URL);
-  // Resize the new window so we can actually see that we are logged in ...
-  // await t.resizeWindow(1000, 700);
   await t.typeText(txtLoginEmail, 'victor@smith.com');
   await t.typeText(txtLoginPassword, 'password1');
   await t.click(btnSubmitSignIn);
