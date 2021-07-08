@@ -40,7 +40,7 @@ const cancelButtonHandler = async () => {
 
 document
   .querySelector('.newGiftForm')
-  .addEventListener('submit', cancelButtonHandler);
+  .addEventListener('reset', cancelButtonHandler);
 
 document
   .querySelector(".newGiftForm")
