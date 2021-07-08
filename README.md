@@ -58,7 +58,7 @@ Our motivation behind this project was initially to create an app that would all
 
 ## Deployed App
 
-[This Note Taker app has been deployed on Heroku and is available here](https://project-2-gift-list.herokuapp.com/)
+[This Gift List app has been deployed on Heroku and is available here.](https://project-2-gift-list.herokuapp.com/)
 
 ## Demo
 
