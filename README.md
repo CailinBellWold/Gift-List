@@ -2,16 +2,18 @@
 
 [![License: MIT](https://img.shields.io/github/license/CailinBellWold/Project-2-Gift-List?style=plastic)](https://opensource.org/licenses/MIT)
 
-## Description 
+## Description
 
+Our application aims to make keeping track of gifts for family and friends much easier by allowing a user to create an account, create a gift by taking in account who the gift receiver is and what you're getting for them. Our app also provides users with a page to view all of their existing gifts, as well as an option to delete or update a gift if need be. Overall, our project goal is to reduce the stress of keeping track of what gifts you're getting for people.
 
 ### Motivation
 
+Our motivation behind this project was initially to create an app that would allow the user to keep track of Christmas gifts, but we decided to shift our project to be able to be used year-round, for any occasion a person can think of.
 
 ### Learning Targets
 
-
 ## Table of Contents
+
 - [Core Objectives Met](#Core)
 - [Technologies Used](#Technologies)
 - [Local Installation & Usage](#Local)
@@ -31,8 +33,8 @@
 7. (IN PROGRESS) When a user clicks on the save button after having edited or added information about a new gift, they are redirected to their user landing page, where the new or updated gift renders with its associated updates.
 8. (IN PROGRESS) - When the user clicks on the 'purchased/done' toggle on a gift line to mark the gift as purchased, the page updates with the gift marked as purchased.
 
-
 ## Technologies Used
+
 - JavaScript
 - mySQL
 - Node.js
@@ -41,6 +43,7 @@
 - [NPM Sequelize ORM Package](https://www.npmjs.com/package/sequelize)
 - [NPM Express-Session Package](https://www.npmjs.com/package/express-session)
 - [NPM Cookies Package](https://www.npmjs.com/package/cookies)
+- [NPM TestCafe Package](https://www.npmjs.com/package/testcafe)
 
 <!--We will Likely Use:>
 - [NPM FS Package](https://www.npmjs.com/package/fs)
@@ -51,22 +54,22 @@
 
 ## Local Installation & Usage
 
-<!-- 1. Clone this Note-Taker repo to your machine.
+1. Clone this gift-list repo to your machine.
 2. Open the repo in your terminal.
-3. Run ```npm init```
-4. Run ```npm install```
-5. Open Note-Taker (now stored on your machine) in your terminal.
-6. Run ``` node server ```
-7. Open [http://localhost:3000](http://localhost:3000) in the modern browser of your choice. -->
+3. Run `npm i`
+4. Run `npm run watch`
+5. Open [http://localhost:3001](http://localhost:3001) in the modern browser of your choice.
 
 ## Deployed App
-<!-- This Note Taker app has been deployed on Heroku and is available at... -->
 
-## Demo 
+[This Note Taker app has been deployed on Heroku and is available here] (https://project-2-gift-list.herokuapp.com/)
 
-DEMO | *Demo live app*
+## Demo
+
+![A user clicks through and shows app functionality ](./public/images/appVideo.gif)
 
 ## MIT License
+
 &copy;2021 Cailin Bell Wold, Danny Roubin, Donna Crawford and Tyler Hance
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -90,8 +93,8 @@ SOFTWARE.
 ## Contributors
 
 For inquiries, please contact any of the following contributors:
+
 - [Cailin Bell Wold](https://github.com/CailinBellWold)
 - [Danny Roubin](https://github.com/DannyRoubin)
 - [Donna Crawford](https://github.com/Donnastjames)
 - [Tyler Hance](https://github.com/tylerhance)
-
