@@ -24,7 +24,7 @@
                             <tr><a href='/gift/{{gift.id}}'></a>
                                 <td scope='row'>{{gift.recipientName}}</th>
                                 <td id='description'>{{gift.description}}</td>
-                                <td id='purchased'>{{gift.purchased}}</td>
+                                <td id='purchased'>{{#if gift.purchased}}Yes{{else}}No{{/if}}</td>
                                 <td class='edit-btns'>
                                     <button class='btn btn-warning edit-gift-btn' data-id='{{gift.id}}'>Update</button>
                                     <button id="deleteBtn" class='btn btn-danger delete-gift-btn' data-id='{{gift.id}}'>Delete</button>
