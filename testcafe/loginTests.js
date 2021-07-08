@@ -32,16 +32,8 @@ test('Login as karen@small.com and log back out', async t => {
   await t.expect(btnSignOut.exists).notOk();
   await t.click(btnSignIn);
 
-  /*
-  const firstWindow = await t.getCurrentWindow();
-  // Clicking "Sign In" opens a new window to the Login Path.
-  // https://testcafe.io/402900/resources/blog/2020-8-26-introducing-multi-window-tests-beta
-  await t.switchToWindow(({url}) => url.pathname === LOGIN_PATH_NAME);
-  */
   url = await t.eval(() => document.documentURI);
   await t.expect(url).eql(LOGIN_URL);
-  // Resize the new window so we can actually see that we are logged in ...
-  // await t.resizeWindow(1000, 700);
   await t.typeText(txtLoginEmail, 'karen@small.com');
   await t.typeText(txtLoginPassword, '1password');
   // The Add Gift section should not be showing yet ...
