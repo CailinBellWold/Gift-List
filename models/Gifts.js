@@ -30,14 +30,6 @@ Gifts.init(
         key: 'id',
       },
     },
-    // Part of Stretch Goal
-    // item_price: {
-    //   type: DataTypes.DECIMAL (10,2),
-    //   allowNull: false,
-    //   validate: {
-    //     isDecimal: true
-    //   }
-    // },
   },
   {
     sequelize,
