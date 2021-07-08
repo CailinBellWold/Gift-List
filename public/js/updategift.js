@@ -6,9 +6,6 @@ const newFormHandler = async (event) => {
   const recipientName = document.getElementById("giftGiftee").value.trim();
   const description = document.getElementById("giftDescription").value.trim();
   const purchased = document.getElementById("giftPurchased").checked;
-  //   keep these two just in case we decide to include the budget and notes
-  //   const budget = document.querySelector("#giftBudget").value.trim();
-  //   const notes = document.querySelector("#giftNotes").value.trim();
 
   if (recipientName && description) {
     const response = await fetch(`/api/gifts/${id}`, {
