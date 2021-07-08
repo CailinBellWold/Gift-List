@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// If you want to refer to it as Gift instead of Gifts, this will do the trick ...
 const { Gifts: Gift } = require('../../models');
 const withAuth = require('../../utils/auth');
 

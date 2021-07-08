@@ -5,10 +5,8 @@ const saveNewGiftHandler = async (event) => {
   const description = document
     .querySelector("#newgiftDescription")
     .value.trim();
-  // TODO: The Gifts/Gift model only takes a recipientName and description,
-  //   so why do we have a budget and notes on this form?
 
-  // recipientName and description are required to create a new Gift ...
+  // recipientName and description are required to create a new Gift
   if (recipientName && description) {
     // Send a POST request to the API endpoint
     const response = await fetch("/api/gifts", {
@@ -42,7 +40,7 @@ const cancelButtonHandler = async () => {
 
 document
   .querySelector('.newGiftForm')
-  .addEventListener('submit', cancelButtonHandler);
+  .addEventListener('reset', cancelButtonHandler);
 
 document
   .querySelector(".newGiftForm")

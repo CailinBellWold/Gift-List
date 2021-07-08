@@ -1,4 +1,3 @@
-const Recipient = require('./Recipient');
 const User = require('./User');
 const Gifts = require('./Gifts');
 

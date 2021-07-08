@@ -28,7 +28,7 @@ const sectionAddGift = Selector('section#btn-add-gift');
 fixture `Sign-Up Tests`
   .page(BASE_URL);
 
-// TODO: This has a problem when run a second time, trying to create a second donald@smith.com
+// This has a problem when run a second time, trying to create a second donald@smith.com
 //   WORK-AROUND: Do this before running the test --> DELETE FROM user where email = 'donald@smith.com';
 test('Sign up as donald@smith.com and then verify new login works for donald', async t => {
   let url = await t.eval(() => document.documentURI);
@@ -40,16 +40,8 @@ test('Sign up as donald@smith.com and then verify new login works for donald', a
   await t.expect(btnSignOut.exists).notOk();
   await t.click(btnSignUp);
 
-  /*
-  const firstWindow = await t.getCurrentWindow();
-  // Clicking "Sign In" opens a new window to the Login Path.
-  // https://testcafe.io/402900/resources/blog/2020-8-26-introducing-multi-window-tests-beta
-  await t.switchToWindow(({url}) => url.pathname === LOGIN_PATH_NAME);
-  */
   url = await t.eval(() => document.documentURI);
   await t.expect(url).eql(LOGIN_URL);
-  // Resize the new window so we can actually see that we are logged in ...
-  // await t.resizeWindow(1000, 700);
   await t.typeText(txtSignupEmail, 'donald@smith.com');
   await t.typeText(txtSignupPassword, 'password22');
   // The Add Gift section should not be showing yet ...

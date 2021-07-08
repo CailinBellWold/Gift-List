@@ -2,25 +2,25 @@
   <div class='row'>
     <div class='col-md-5'>
       <h2>Update Gift</h2>
-      <small id='updateGiftHelp' class='form-text text-muted'>NOTE: Both the receipient and description must be updated to save.</small>
+      <small id='updateGiftHelp' class='form-text text-muted'>NOTE: The receipient and description fields cannot be blank.</small>
       <form class='form updateGiftForm'>
         <div class='form-group'>
           <label for='email-login'>Recipient</label>
-          <input type='text' class='form-control' id='giftGiftee' placeholder='{{gift.recipientName}}'>
+          <input type='text' class='form-control' id='giftGiftee' value='{{gift.recipientName}}'>
         </div>
         <div class='form-group'>
           <label for='password-login'>Description</label>
-          <input type='text' class='form-control' id='giftDescription' placeholder='{{gift.description}}'>
+          <input type='text' class='form-control' id='giftDescription' value='{{gift.description}}'>
         </div>
         <div class='form-group'>
           <label class="switch">Purchased</label>
-          <input type="checkbox">
+          <input type="checkbox" id="giftPurchased" {{#if gift.purchased}}checked{{/if}}>
         </div>
         <button class='btn btn-primary submit' id='giftSave' type='submit'>Save</button>
-        <button class='btn btn-primary submit' id='giftCancel' type='submit'>Cancel</button>
+        <button class='btn btn-warning submit' id='giftCancel' type='reset'>Cancel</button>
       </form>
     </div>
   </div>
 </div>
 
-<script src="../../js/updategift.js"></script>
+<script src="/js/updategift.js"></script>
