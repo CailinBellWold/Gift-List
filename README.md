@@ -50,19 +50,88 @@ Our motivation behind this project was initially to create an app that would all
 
 ## Local Installation & Usage
 
-1. Clone this gift-list repo to your machine.
-2. Open the repo in your terminal.
-3. Run `npm i`.
-4. Run `npm run watch`.
-5. Open [http://localhost:3001](http://localhost:3001) in the modern browser of your choice.
+To use this app, you will need a MySQL Workbench account, and to have the app installed on your machine. Documentation with installation instructions are available [here.](http://localhost:3001) 
+
+STEP 1
+
+    A1.1 Clone this gift-list repo to your machine.
+
+STEP 2
+
+From Visual Studio Code or the code editor of your choice:
+
+    A2.1 Open the repo.  
+    A2.2 Locate and open the .env.EXAMPLE file, located in the root directory.
+    A2.3 Add your own MySQL Workbench Username and Password to the env.EXAMPLE file.
+    A2.4 Re-name the file to .env (i.e. remove .EXAMPLE).
+    A2.5 Save your changes.
+    A2.6 Locate and open db\schema.sql.
+    A2.7 Copy and paste the database schema into a new MySQL Workbench query tab and run it. Refresh and view your updated schemas to ensure that giftTracker_db now appears.
+
+STEP 3
+
+From your terminal, run:
+
+    A3.1 npm i
+    A3.2 npm run watch
+
+STEP 4
+
+From the modern browser of your choice:
+
+    A4.1 Open http://localhost:3001.
+
+You may now use the site to create a new account, sign in to a new one, and to add, edit, or delete gifts.
+
+### TestCafe
+
+A requirement of this assignment was to use a new technology that hadn't previously been used in class. Our group chose [TestCafe](https://www.npmjs.com/package/testcafe) to assist with end-to-end web testing. To utilize TestCafe for this app:
+
+STEP 1
+
+    TC1.1 Complete steps A1.1 to A3.1, above. 
+
+STEP 2
+
+From your terminal, run:
+
+    TC2.1 npm run seed
+
+STEP 3
+
+To run tests, you will need two terminals open.  
+
+From Terminal 1, run:
+
+    TC3.1 npm run watch
+
+From Terminal 2, run:
+
+    TC3.2 npm run testcafe-ui
+    TC3.3 TestCafe will open a browser window and run the programmed tests. Once tests are complete, Terminal 2 will show the tests run and passed.
+
+STEP 4
+
+From Visual Studio Code or the code editor of your choice:
+
+    TC4.1 If you wish to run tests more than once, run the following from a new query tab before repeating the tests:
+    
+    USE gifttracker_db;
+    DELETE FROM user where email = 'donald@smith.com';
+    SELECT * FROM user;
 
 ## Deployed App
 
 [This Note Taker app has been deployed on Heroku and is available here](https://project-2-gift-list.herokuapp.com/)
 
-## Demo
+## Demo 
+
+App
 
 ![A user clicks through and shows app functionality ](./public/images/appVideo.gif)
+
+TestCafe  
+[A user runs tests via TestCafe](https://drive.google.com/file/d/13h35To_OeOEzL3UEsGg1bEFkrWtcntwT/view)
 
 ## MIT License
 
