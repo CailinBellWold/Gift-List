@@ -50,7 +50,7 @@ Our motivation behind this project was initially to create an app that would all
 
 ## Local Installation & Usage
 
-To use this app, you will need a MySQL Workbench account, and to have the app installed on your machine. Documentation with installation instructions are available [here.](http://localhost:3001) 
+To use this app, you will need a MySQL Workbench account, and to have the app installed on your machine. Documentation with installation instructions are available [here.](https://dev.mysql.com/doc/workbench/en/wb-installing.html) 
 
 STEP 1
 
